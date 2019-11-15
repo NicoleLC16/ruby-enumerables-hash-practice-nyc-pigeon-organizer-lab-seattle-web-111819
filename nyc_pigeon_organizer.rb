@@ -1,7 +1,13 @@
 def nyc_pigeon_organizer(data)
 pigeon_hash = {}
 
-data.eachdo |(categories, key|
-end 
+data.each do |categories, subcategories| 
+  subcategories.each do |results, each_name|
+    each_name.each |pigeon_name|
+      pigeon_hash[pigeon_name] ||= {}
+      pigeon_hash[pigeon_name][subcategories] = []
+      
+    end
+  end 
 pigeon_hash
 end

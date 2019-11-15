@@ -2,11 +2,11 @@ def nyc_pigeon_organizer(data)
 pigeon_hash = {}
 
 data.each do |categories, subcategories| 
-  subcategories.each do |results, each_name|
-    each_name.each do |pigeon_name|
+  subcategories.each do |key, name|
+    name.each do |pigeon_name|
       pigeon_hash[pigeon_name] ||= {}
       pigeon_hash[pigeon_name][categories] ||= []
-      pigeon_hash[pigeon_name][categories] << subcategories.to_s
+      pigeon_hash[pigeon_name][categories] << key.to_s
       end
     end
   end 

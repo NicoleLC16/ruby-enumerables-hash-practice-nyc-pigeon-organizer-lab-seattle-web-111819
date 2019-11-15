@@ -3,10 +3,11 @@ pigeon_hash = {}
 
 data.each do |categories, subcategories| 
   subcategories.each do |results, each_name|
-    each_name.each |pigeon_name|
+    each_name.each do |pigeon_name|
       pigeon_hash[pigeon_name] ||= {}
       pigeon_hash[pigeon_name][categories] ||= []
-      
+      pigeon_hash[pigeon_name][categories] << subcategories.to_s
+      end
     end
   end 
 pigeon_hash
